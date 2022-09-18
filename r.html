@@ -1,0 +1,84 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Droppable - Default functionality</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css">
+  <style>
+  #drag1 { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
+  #drop1 { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px; }
+
+  #drag2 { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
+  #drop2 { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px; }
+
+  #drag3 { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
+  #drop3 { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px; }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#drag3" ).draggable();
+    $( "#drop1" ).droppable({
+      drop: function( event, ui ) {
+        $( this )
+          .addClass( "ui-state-highlight" )
+          .find( "p" )
+            .html( "Правильно!" );
+      }
+    });
+
+  } );
+  $( function() {
+     $( "#drag1" ).draggable();
+    $( "#drop2" ).droppable({
+      drop: function( event, ui ) {
+        $( this )
+          .addClass( "ui-state-highlight" )
+          .find( "p" )
+            .html( "Правильно!" );
+      }});
+
+  } );
+  $( function() {
+    $( "#drag2" ).draggable();
+    $( "#drop3" ).droppable({
+      drop: function( event, ui ) {
+        $( this )
+          .addClass( "ui-state-highlight" )
+          .find( "p" )
+            .html( "Правильно!" );
+      }
+    });
+  } );
+  </script>
+</head>
+<body>
+ 
+<div id="drag1" class="ui-widget-content">
+  <p>HTML - це</p>
+</div>
+ 
+<div id="drop1" class="ui-widget-header">
+  <p> динамічна, об'єктно-орієнтована прототипна мова програмування.</p>
+</div>
+
+<div id="drag2" class="ui-widget-content">
+    <p>CSS - це</p>
+  </div>
+   
+  <div id="drop2" class="ui-widget-header">
+    <p>стандартизована мова розмітки документів для перегляду веб-сторінок у браузері.</p>
+  </div>
+   
+  <div id="drag3" class="ui-widget-content">
+    <p>JavaScript - це</p>
+  </div>
+   
+  <div id="drop3" class="ui-widget-header">
+    <p>це спеціальна мова стилю сторінок, що використовується для опису їхнього зовнішнього вигляду.</p>
+  </div>
+   
+</body>
+</html>
